@@ -1,5 +1,5 @@
 
-import 'package:chatapp/services/User.dart';
+import 'package:chatapp/services/user.dart';
 
 class Message {
   final User sender;

@@ -1,6 +1,6 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:chatapp/widgets/category_selector.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -24,6 +24,21 @@ class _HomeScreenState extends State<HomeScreen> {
           'Chat App',
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            iconSize: 30,
+            color: Colors.white,
+            onPressed: () {},
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          CategorySelector(
+
+          )
+        ],
       ),
     );
   }
