@@ -1,3 +1,4 @@
+import 'package:chatapp/pages/chat_screen.dart';
 import 'package:chatapp/services/message.dart';
 import 'package:flutter/material.dart';
 import 'package:chatapp/services/message.dart';
@@ -44,24 +45,32 @@ class _FavoriteContactsState extends State<FavoriteContacts> {
               itemBuilder: (BuildContext context, int index){
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      CircleAvatar(
-                        radius: 35.0,
-                        backgroundImage: AssetImage(favorites[index].imageUrl),
-                      ),
-                      SizedBox(
-                        height: 6,
-                      ),
-                      Text(
-                        favorites[index].name,
-                        style: TextStyle(
-                          color: Colors.blueGrey,
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w600
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Chat(user: favorites[index])),
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 35.0,
+                          backgroundImage: AssetImage(favorites[index].imageUrl),
                         ),
-                      )
-                    ],
+                        SizedBox(
+                          height: 6,
+                        ),
+                        Text(
+                          favorites[index].name,
+                          style: TextStyle(
+                            color: Colors.blueGrey,
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w600
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 );
               },
